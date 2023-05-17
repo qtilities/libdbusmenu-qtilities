@@ -21,11 +21,9 @@
 #ifndef DBUSMENUIMPORTER_H
 #define DBUSMENUIMPORTER_H
 
-// Qt
-#include <QtCore/QObject>
+#include <QtCore>
 
-// Local
-#include <dbusmenu_export.h>
+#include "dbusmenu_export.h"
 
 class QAction;
 class QDBusAbstractInterface;
@@ -56,13 +54,13 @@ public:
     /**
      * Creates a DBusMenuImporter listening over DBus on service, path
      */
-    DBusMenuImporter(const QString &service, const QString &path, QObject *parent = 0);
+    DBusMenuImporter(const QString &service, const QString &path, QObject *parent = nullptr);
 
     /**
      * Creates a DBusMenuImporter listening over DBus on service, path, with either async
      * or sync DBus calls
      */
-    DBusMenuImporter(const QString &service, const QString &path, DBusMenuImporterType type, QObject *parent = 0);
+    DBusMenuImporter(const QString &service, const QString &path, DBusMenuImporterType type, QObject *parent = nullptr);
 
     virtual ~DBusMenuImporter();
 

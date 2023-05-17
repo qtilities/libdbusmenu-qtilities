@@ -22,8 +22,8 @@
 #define DBUSMENUEXPORTER_H
 
 // Qt
-#include <QtCore/QObject>
-#include <QtDBus/QDBusConnection>
+#include <QDBusConnection>
+#include <QObject>
 
 // Local
 #include <dbusmenu_export.h>
@@ -47,7 +47,7 @@ public:
      */
     DBusMenuExporter(const QString &dbusObjectPath, QMenu *menu, const QDBusConnection &dbusConnection = QDBusConnection::sessionBus());
 
-    virtual ~DBusMenuExporter();
+    ~DBusMenuExporter() override;
 
     /**
      * Asks the matching DBusMenuImporter to activate @p action. For menus it

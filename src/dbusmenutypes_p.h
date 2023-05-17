@@ -22,11 +22,10 @@
 #define DBUSMENUTYPES_P_H
 
 // Qt
-#include <QtCore/QList>
-#include <QtCore/QStringList>
-#include <QtCore/QVariant>
+#include <QList>
+#include <QStringList>
+#include <QVariant>
 
-// Local
 #include <dbusmenu_export.h>
 
 class QDBusArgument;
