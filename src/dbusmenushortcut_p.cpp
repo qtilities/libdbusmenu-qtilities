@@ -78,6 +78,6 @@ QKeySequence DBusMenuShortcut::toKeySequence() const
         processKeyTokens(&keyTokens, DM_COLUMN, QT_COLUMN);
         tmp << keyTokens.join(QLatin1String("+"));
     }
-    QString string = tmp.join(QLatin1String(", "));
+    const QString string = tmp.join(QLatin1String(", "));
     return QKeySequence::fromString(string);
 }

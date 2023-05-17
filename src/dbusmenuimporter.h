@@ -65,7 +65,7 @@ public:
      */
     DBusMenuImporter(const QString &service, const QString &path, DBusMenuImporterType type, QObject *parent = nullptr);
 
-    virtual ~DBusMenuImporter();
+    ~DBusMenuImporter() override;
 
     /**
      * The menu created from listening to the DBusMenuExporter over DBus
