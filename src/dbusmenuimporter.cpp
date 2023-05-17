@@ -410,10 +410,10 @@ QMenu *DBusMenuImporter::menu() const
     return d->m_menu;
 }
 
-void DBusMenuImporterPrivate::slotItemsPropertiesUpdated(const DBusMenuItemList &updatedList, const DBusMenuItemKeysList &removedList)
+void DBusMenuImporter::slotItemsPropertiesUpdated(const DBusMenuItemList &updatedList, const DBusMenuItemKeysList &removedList)
 {
     for (const DBusMenuItem &item : updatedList) {
-        QAction *action = m_actionForId.value(item.id);
+        QAction *action = d->m_actionForId.value(item.id);
         if (!action) {
             // We don't know this action. It probably is in a menu we haven't fetched yet.
             continue;
@@ -423,19 +423,19 @@ void DBusMenuImporterPrivate::slotItemsPropertiesUpdated(const DBusMenuItemList 
             it = item.properties.constBegin(),
             end = item.properties.constEnd();
         for(; it != end; ++it) {
-            updateActionProperty(action, it.key(), it.value());
+            d->updateActionProperty(action, it.key(), it.value());
         }
     }
 
     for (const DBusMenuItemKeys &item : removedList) {
-        QAction *action = m_actionForId.value(item.id);
+        QAction *action = d->m_actionForId.value(item.id);
         if (!action) {
             // We don't know this action. It probably is in a menu we haven't fetched yet.
             continue;
         }
         const auto properties = item.properties;
         for (const QString &key : properties) {
-            updateActionProperty(action, key, QVariant());
+            d->updateActionProperty(action, key, QVariant());
         }
     }
 }
