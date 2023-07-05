@@ -500,3 +500,5 @@ QString DBusMenuExporter::status() const
 {
     return d->m_dbusObject->status();
 }
+
+#include "moc_dbusmenuexporter.cpp"
