@@ -1,0 +1,10 @@
+prefix=@CMAKE_INSTALL_PREFIX@
+exec_prefix=@CMAKE_INSTALL_PREFIX@
+libdir=@CMAKE_INSTALL_PREFIX@/lib
+includedir=@CMAKE_INSTALL_PREFIX@/include/${PROJECT_NAME}-qt${PROJECT_QT_VERSION}
+
+Name: lib${PROJECT_NAME}-qt${PROJECT_QT_VERSION}
+Description: Qt implementation of dbusmenu spec
+Version: @PROJECT_VERSION@
+Libs: -L${libdir} -l${PROJECT_NAME}-qt${PROJECT_QT_VERSION}
+Cflags: -I${includedir}
