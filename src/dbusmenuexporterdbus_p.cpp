@@ -21,9 +21,9 @@ static const char *DBUSMENU_INTERFACE = "com.canonical.dbusmenu";
 static const char *FDO_PROPERTIES_INTERFACE = "org.freedesktop.DBus.Properties";
 
 DBusMenuExporterDBus::DBusMenuExporterDBus(DBusMenuExporter *exporter)
-: QObject(exporter)
-, m_exporter(exporter)
-, m_status(QStringLiteral("normal"))
+    : QObject(exporter)
+    , m_exporter(exporter)
+    , m_status(QStringLiteral("normal"))
 {
     DBusMenuTypes_register();
     new DbusmenuAdaptor(this);
@@ -41,7 +41,7 @@ uint DBusMenuExporterDBus::GetLayout(int parentId, int recursionDepth, const QSt
     return m_exporter->d->m_revision;
 }
 
-void DBusMenuExporterDBus::Event(int id, const QString &eventType, const QDBusVariant &/*data*/, uint /*timestamp*/)
+void DBusMenuExporterDBus::Event(int id, const QString &eventType, const QDBusVariant & /*data*/, uint /*timestamp*/)
 {
     if (eventType == QStringLiteral("clicked")) {
         QAction *action = m_exporter->d->m_actionForId.value(id);
@@ -144,7 +144,7 @@ bool DBusMenuExporterDBus::AboutToShow(int id)
     return filter.mChanged;
 }
 
-void DBusMenuExporterDBus::setStatus(const QString& status)
+void DBusMenuExporterDBus::setStatus(const QString &status)
 {
     if (m_status == status) {
         return;

@@ -17,12 +17,12 @@
 #include "debug_p.h"
 
 DBusMenu::DBusMenu(QMenu *menu, DBusMenuExporter *exporter, int parentId)
-: QObject(menu)
-, m_exporter(exporter)
-, m_parentId(parentId)
+    : QObject(menu)
+    , m_exporter(exporter)
+    , m_parentId(parentId)
 {
     menu->installEventFilter(this);
-    connect(m_exporter, SIGNAL(destroyed(QObject*)), SLOT(deleteMe()));
+    connect(m_exporter, SIGNAL(destroyed(QObject *)), SLOT(deleteMe()));
 }
 
 DBusMenu::~DBusMenu()

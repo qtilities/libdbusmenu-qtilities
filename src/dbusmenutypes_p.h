@@ -12,7 +12,7 @@
 #include <QStringList>
 #include <QVariant>
 
-#include <dbusmenu_export.h>
+#include "dbusmenu_export.h"
 
 class QDBusArgument;
 
@@ -20,8 +20,7 @@ class QDBusArgument;
 /**
  * Internal struct used to communicate on DBus
  */
-struct DBUSMENU_EXPORT DBusMenuItem
-{
+struct DBUSMENU_EXPORT DBusMenuItem {
     int id;
     QVariantMap properties;
 };
@@ -35,13 +34,11 @@ typedef QList<DBusMenuItem> DBusMenuItemList;
 
 Q_DECLARE_METATYPE(DBusMenuItemList)
 
-
 //// DBusMenuItemKeys
 /**
  * Represents a list of keys for a menu item
  */
-struct DBUSMENU_EXPORT DBusMenuItemKeys
-{
+struct DBUSMENU_EXPORT DBusMenuItemKeys {
     int id;
     QStringList properties;
 };
@@ -61,8 +58,7 @@ Q_DECLARE_METATYPE(DBusMenuItemKeysList)
  * DBusMenuLayoutItemList.
  */
 struct DBusMenuLayoutItem;
-struct DBUSMENU_EXPORT DBusMenuLayoutItem
-{
+struct DBUSMENU_EXPORT DBusMenuLayoutItem {
     int id;
     QVariantMap properties;
     QList<DBusMenuLayoutItem> children;

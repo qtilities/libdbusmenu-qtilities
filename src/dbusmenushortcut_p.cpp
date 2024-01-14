@@ -15,12 +15,15 @@
 static const int QT_COLUMN = 0;
 static const int DM_COLUMN = 1;
 
-static void processKeyTokens(QStringList* tokens, int srcCol, int dstCol)
+static void processKeyTokens(QStringList *tokens, int srcCol, int dstCol)
 {
     struct Row {
-        const char* zero;
-        const char* one;
-        const char* operator[](int col) const { return col == 0 ? zero : one; }
+        const char *zero;
+        const char *one;
+        const char *operator[](int col) const
+        {
+            return col == 0 ? zero : one;
+        }
     };
     static const Row table[] = {{"Meta", "Super"},
                                 {"Ctrl", "Control"},
@@ -31,15 +34,15 @@ static void processKeyTokens(QStringList* tokens, int srcCol, int dstCol)
                                 {"-", "minus"},
                                 {nullptr, nullptr}};
 
-    const Row* ptr = table;
+    const Row *ptr = table;
     for (; ptr->zero != nullptr; ++ptr) {
-        const char* from = (*ptr)[srcCol];
-        const char* to = (*ptr)[dstCol];
+        const char *from = (*ptr)[srcCol];
+        const char *to = (*ptr)[dstCol];
         tokens->replaceInStrings(QLatin1String(from), QLatin1String(to));
     }
 }
 
-DBusMenuShortcut DBusMenuShortcut::fromKeySequence(const QKeySequence& sequence)
+DBusMenuShortcut DBusMenuShortcut::fromKeySequence(const QKeySequence &sequence)
 {
     QString string = sequence.toString();
     DBusMenuShortcut shortcut;

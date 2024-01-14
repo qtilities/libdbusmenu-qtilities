@@ -17,7 +17,7 @@ class DBUSMENU_EXPORT DBusMenuShortcut : public QList<QStringList>
 {
 public:
     QKeySequence toKeySequence() const;
-    static DBusMenuShortcut fromKeySequence(const QKeySequence&);
+    static DBusMenuShortcut fromKeySequence(const QKeySequence &);
 };
 
 Q_DECLARE_METATYPE(DBusMenuShortcut)

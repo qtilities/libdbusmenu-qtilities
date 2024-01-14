@@ -21,8 +21,8 @@
 #include "dbusmenu_p.h"
 #include "dbusmenuexporterdbus_p.h"
 #include "dbusmenuexporterprivate_p.h"
-#include "dbusmenutypes_p.h"
 #include "dbusmenushortcut_p.h"
+#include "dbusmenutypes_p.h"
 #include "debug_p.h"
 #include "utils_p.h"
 
@@ -178,7 +178,7 @@ void DBusMenuExporterPrivate::addAction(QAction *action, int parentId)
     }
     QVariantMap map = propertiesForAction(action);
     id = m_nextId++;
-    QObject::connect(action, SIGNAL(destroyed(QObject*)), q, SLOT(slotActionDestroyed(QObject*)));
+    QObject::connect(action, SIGNAL(destroyed(QObject *)), q, SLOT(slotActionDestroyed(QObject *)));
     m_actionForId.insert(id, action);
     m_idForAction.insert(action, id);
     m_actionProperties.insert(action, map);
@@ -196,7 +196,7 @@ void DBusMenuExporterPrivate::addAction(QAction *action, int parentId)
  */
 void DBusMenuExporterPrivate::removeActionInternal(QObject *object)
 {
-    QAction* action = static_cast<QAction*>(object);
+    QAction *action = static_cast<QAction *>(object);
     m_actionProperties.remove(action);
     int id = m_idForAction.take(action);
     m_actionForId.remove(id);
@@ -205,7 +205,7 @@ void DBusMenuExporterPrivate::removeActionInternal(QObject *object)
 void DBusMenuExporterPrivate::removeAction(QAction *action, int parentId)
 {
     removeActionInternal(action);
-    QObject::disconnect(action, SIGNAL(destroyed(QObject*)), q, SLOT(slotActionDestroyed(QObject*)));
+    QObject::disconnect(action, SIGNAL(destroyed(QObject *)), q, SLOT(slotActionDestroyed(QObject *)));
     ++m_revision;
     emitLayoutUpdated(parentId);
 }
@@ -237,7 +237,7 @@ void DBusMenuExporterPrivate::insertIconProperty(QVariantMap *map, QAction *acti
     }
 }
 
-static void collapseSeparator(QAction* action)
+static void collapseSeparator(QAction *action)
 {
     action->setVisible(false);
 }
@@ -262,14 +262,14 @@ static void collapseSeparator(QAction* action)
 // We fake this by setting separators invisible before exporting them.
 //
 // cf. https://bugs.launchpad.net/libdbusmenu-qt/+bug/793339
-void DBusMenuExporterPrivate::collapseSeparators(QMenu* menu)
+void DBusMenuExporterPrivate::collapseSeparators(QMenu *menu)
 {
-    QList<QAction*> actions = menu->actions();
+    QList<QAction *> actions = menu->actions();
     if (actions.isEmpty()) {
         return;
     }
 
-    QList<QAction*>::Iterator it, begin = actions.begin(), end = actions.end();
+    QList<QAction *>::Iterator it, begin = actions.begin(), end = actions.end();
 
     // Get rid of separators at end
     it = end - 1;
@@ -296,7 +296,7 @@ void DBusMenuExporterPrivate::collapseSeparators(QMenu* menu)
     // Collapse separators in between
     bool previousWasSeparator = false;
     for (; it != end; ++it) {
-        QAction* action = *it;
+        QAction *action = *it;
         if (action->isSeparator()) {
             if (previousWasSeparator) {
                 collapseSeparator(action);
@@ -315,8 +315,8 @@ void DBusMenuExporterPrivate::collapseSeparators(QMenu* menu)
 //
 //-------------------------------------------------
 DBusMenuExporter::DBusMenuExporter(const QString &objectPath, QMenu *menu, const QDBusConnection &_connection)
-: QObject(menu)
-, d(new DBusMenuExporterPrivate)
+    : QObject(menu)
+    , d(new DBusMenuExporterPrivate)
 {
     d->q = this;
     d->m_objectPath = objectPath;
@@ -362,18 +362,16 @@ void DBusMenuExporter::doUpdateActions()
             continue;
         }
 
-        QVariantMap& oldProperties = d->m_actionProperties[action];
-        QVariantMap  newProperties = d->propertiesForAction(action);
-        QVariantMap  updatedProperties;
-        QStringList  removedProperties;
+        QVariantMap &oldProperties = d->m_actionProperties[action];
+        QVariantMap newProperties = d->propertiesForAction(action);
+        QVariantMap updatedProperties;
+        QStringList removedProperties;
 
         // Find updated and removed properties
         QVariantMap::ConstIterator newEnd = newProperties.constEnd();
 
-        QVariantMap::ConstIterator
-            oldIt = oldProperties.constBegin(),
-            oldEnd = oldProperties.constEnd();
-        for(; oldIt != oldEnd; ++oldIt) {
+        QVariantMap::ConstIterator oldIt = oldProperties.constBegin(), oldEnd = oldProperties.constEnd();
+        for (; oldIt != oldEnd; ++oldIt) {
             QString key = oldIt.key();
             QVariantMap::ConstIterator newIt = newProperties.constFind(key);
             if (newIt != newEnd) {
@@ -472,12 +470,12 @@ void DBusMenuExporter::activateAction(QAction *action)
     d->m_dbusObject->ItemActivationRequested(id, timeStamp);
 }
 
-void DBusMenuExporter::slotActionDestroyed(QObject* object)
+void DBusMenuExporter::slotActionDestroyed(QObject *object)
 {
     d->removeActionInternal(object);
 }
 
-void DBusMenuExporter::setStatus(const QString& status)
+void DBusMenuExporter::setStatus(const QString &status)
 {
     d->m_dbusObject->setStatus(status);
 }

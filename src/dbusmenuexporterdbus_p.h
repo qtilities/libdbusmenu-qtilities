@@ -32,7 +32,10 @@ class DBusMenuExporterDBus : public QObject
 public:
     DBusMenuExporterDBus(DBusMenuExporter *m_exporter);
 
-    uint Version() const { return 2; }
+    uint Version() const
+    {
+        return 2;
+    }
 
     QString status() const;
     void setStatus(const QString &status);

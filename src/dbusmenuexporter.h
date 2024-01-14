@@ -11,8 +11,7 @@
 #include <QDBusConnection>
 #include <QObject>
 
-// Local
-#include <dbusmenu_export.h>
+#include "dbusmenu_export.h"
 
 class QAction;
 class QMenu;
@@ -67,7 +66,7 @@ protected:
 private Q_SLOTS:
     void doUpdateActions();
     void doEmitLayoutUpdated();
-    void slotActionDestroyed(QObject*);
+    void slotActionDestroyed(QObject *);
 
 private:
     Q_DISABLE_COPY(DBusMenuExporter)
