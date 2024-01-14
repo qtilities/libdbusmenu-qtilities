@@ -11,6 +11,8 @@
 #include <QMetaType>
 #include <QStringList>
 
+#include "dbusmenu_export.h"
+
 class QKeySequence;
 
 class DBUSMENU_EXPORT DBusMenuShortcut : public QList<QStringList>
