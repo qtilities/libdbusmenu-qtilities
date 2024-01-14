@@ -13,7 +13,7 @@ option(DBUSMENU_WITH_DOC              "Build Doxygen documentation [default: ON]
 set(PROJECT_QT_VERSION 5 CACHE STRING "Qt version to use           [default: 5]")
 
 set(DBUSMENU_NAME ${PROJECT_NAME}-qt${PROJECT_QT_VERSION})
-configure_file(${PROJECT_NAME}.pc.in ${CMAKE_BINARY_DIR}/${PROJECT_NAME}.pc @ONLY)
+configure_file(scripts/${PROJECT_NAME}.pc.in ${CMAKE_BINARY_DIR}/${PROJECT_NAME}.pc @ONLY)
 #=======================================================================================================
 # Qt
 #=======================================================================================================
@@ -31,7 +31,7 @@ add_subdirectory(src)
 #=======================================================================================================
 include(GNUInstallDirs)
 if(DBUSMENU_WITH_DOC)
-    configure_file(Doxyfile.in ${CMAKE_BINARY_DIR}/Doxyfile @ONLY)
+    configure_file(scripts/Doxyfile.in ${CMAKE_BINARY_DIR}/Doxyfile @ONLY)
     add_custom_target(doc ALL doxygen WORKING_DIRECTORY ${CMAKE_BINARY_DIR})
     install(DIRECTORY ${CMAKE_BINARY_DIR}/html/
         DESTINATION ${CMAKE_INSTALL_DOCDIR}/qt${PROJECT_QT_VERSION}
