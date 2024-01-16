@@ -599,5 +599,3 @@ QIcon DBusMenuImporter::iconForName(const QString &/*name*/)
 {
     return QIcon();
 }
-
-#include "dbusmenuimporter.moc"

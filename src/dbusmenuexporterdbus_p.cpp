@@ -166,5 +166,3 @@ QString DBusMenuExporterDBus::status() const
 {
     return m_status;
 }
-
-#include "moc_dbusmenuexporterdbus_p.cpp"
