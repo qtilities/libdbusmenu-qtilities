@@ -1,31 +1,38 @@
 # libdbusmenu-qtilities
 
+[![CI]](https://github.com/qtilities/libdbusmenu-qtilities/actions/workflows/build.yml)
+
+## Overview
+
 This library provides a Qt implementation of the DBusMenu protocol.
 
-The DBusMenu protocol makes it possible for applications to export and import
-their menus over DBus.
+The DBusMenu protocol makes it possible for applications to export and import their menus over DBus.
 
-## Authors
+## Dependencies
 
-- Aurélien Gâteau (former maintainer)
-- Renato Filho (previous maintainer)
-- Canonical DX Team (previous group maintainer)
+### Runtime
+
+- Qt5/6 base
+
+### Build
+
+- CMake
+- Git (optional, to pull latest VCS checkouts)
 
 ## Documentation
 
 By default documentation is generated with Doxygen.
 You can disable documentation generation by passing `-D DBUSMENU_WITH_DOC=OFF` to CMake.
 
-## Legacy links
+## Packages
 
-### Source code, bugtracker and tarball hosts
+[![Packages]](https://repology.org/project/libdbusmenu-qtilities/versions)
 
-<https://launchpad.net/libdbusmenu-qt>
+## Licenses
 
-### KDE developers mirror
+- DBusMenu is licensed under the [LGPL-2.0-or-later] license.
 
-<http://gitorious.org/dbusmenu/dbusmenu-qt>
 
-### Spec
-
-<http://people.canonical.com/~agateau/dbusmenu/spec/index.html>
+[CI]:                https://github.com/qtilities/libdbusmenu-qtilities/actions/workflows/build.yml/badge.svg
+[LGPL-2.0-or-later]: COPYING
+[Packages]:          https://repology.org/badge/vertical-allrepos/libdbusmenu-qtilities.svg
