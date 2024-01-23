@@ -15,6 +15,8 @@ env:
   build_type: Release
 jobs:
   linux:
+    permissions:
+      contents: write
     name: Linux
     runs-on: ubuntu-latest
     strategy:
@@ -39,14 +41,14 @@ jobs:
       run: |
         sudo apt-get install doxygen \
         ${{ matrix.qt_version == 5
-        && 'qtbase5-dev qttools5-dev'
-        || 'qt6-base-dev libgl1-mesa-dev qt6-l10n-tools qt6-tools-dev qt6-tools-dev-tools'
+        && 'qtbase5-dev qtbase5-doc-dev qttools5-dev'
+        || 'libgl1-mesa-dev qt6-base-dev qt6-l10n-tools qt6-tools-dev qt6-tools-dev-tools'
         }}
 
     - name: Configure
       run: |
         options=(
-          -D PROJECT_QT_VERSION=${{ matrix.qt_version }}
+          -D DBUSMENU_QT_VERSION=${{ matrix.qt_version }}
           -D CMAKE_BUILD_TYPE=${{ env.build_type }}
           -D CMAKE_INSTALL_PREFIX="/usr"
           -B build
@@ -55,3 +57,16 @@ jobs:
 
     - name: Build
       run: cmake --build build --config ${{ env.build_type }}
+
+    - name: Upload Doxygen Documentation
+      if: |
+        matrix.qt_version == 5        &&
+        matrix.config.cc  == 'clang'  &&
+        github.ref_name   == 'master' &&
+        github.event_name != 'pull_request'
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: www
+        publish_dir: ./build/html
+        force_orphan: true
