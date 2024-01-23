@@ -2,21 +2,22 @@ configure_file(dbusmenu_export.h.in  ${CMAKE_CURRENT_BINARY_DIR}/dbusmenu_export
 configure_file(dbusmenu_version.h.in ${CMAKE_CURRENT_BINARY_DIR}/dbusmenu_version.h @ONLY)
 
 set(PROJECT_SOURCES
-    dbusmenu_p.cpp
-    dbusmenuexporter.cpp
-    dbusmenuexporterdbus_p.cpp
-    dbusmenuimporter.cpp
-    dbusmenushortcut_p.cpp
-    dbusmenutypes_p.cpp
-    utils.cpp
-    dbusmenu_p.h
+    com.canonical.dbusmenu.xml
     dbusmenuexporter.h
-    dbusmenuexporterdbus_p.h
-    dbusmenuexporterprivate_p.h
+    dbusmenuexporter.cpp
     dbusmenuimporter.h
-    dbusmenushortcut_p.h
-    dbusmenutypes_p.h
+    dbusmenuimporter.cpp
+    utils.cpp
     debug_p.h
+    dbusmenu_p.h
+    dbusmenu_p.cpp
+    dbusmenuexporterdbus_p.h
+    dbusmenuexporterdbus_p.cpp
+    dbusmenuexporterprivate_p.h
+    dbusmenushortcut_p.h
+    dbusmenushortcut_p.cpp
+    dbusmenutypes_p.h
+    dbusmenutypes_p.cpp
     utils_p.h
 )
 qt_add_dbus_adaptor(PROJECT_SOURCES
