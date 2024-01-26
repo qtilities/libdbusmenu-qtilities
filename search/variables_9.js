@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['jalali_10212',['Jalali',['https://doc.qt.io/qt-5/qcalendar.html#System-enum',1,'QCalendar']]],
+  ['jamaica_10213',['Jamaica',['https://doc.qt.io/qt-5/qlocale.html#Country-enum',1,'QLocale']]],
+  ['jamoscript_10214',['JamoScript',['https://doc.qt.io/qt-5/qlocale.html#Script-enum',1,'QLocale']]],
+  ['japan_10215',['Japan',['https://doc.qt.io/qt-5/qlocale.html#Country-enum',1,'QLocale']]],
+  ['japanese_10216',['Japanese',['https://doc.qt.io/qt-5/qlocale.html#Language-enum',1,'QLocale']]],
+  ['japanesescript_10217',['JapaneseScript',['https://doc.qt.io/qt-5/qlocale.html#Script-enum',1,'QLocale']]],
+  ['javanese_10218',['Javanese',['https://doc.qt.io/qt-5/qlocale.html#Language-enum',1,'QLocale']]],
+  ['javanesescript_10219',['JavaneseScript',['https://doc.qt.io/qt-5/qlocale.html#Script-enum',1,'QLocale']]],
+  ['jersey_10220',['Jersey',['https://doc.qt.io/qt-5/qlocale.html#Country-enum',1,'QLocale']]],
+  ['jju_10221',['Jju',['https://doc.qt.io/qt-5/qlocale.html#Language-enum',1,'QLocale']]],
+  ['joining_5fcausing_10222',['Joining_Causing',['https://doc.qt.io/qt-5/qchar.html#JoiningType-enum',1,'QChar']]],
+  ['joining_5fdual_10223',['Joining_Dual',['https://doc.qt.io/qt-5/qchar.html#JoiningType-enum',1,'QChar']]],
+  ['joining_5fleft_10224',['Joining_Left',['https://doc.qt.io/qt-5/qchar.html#JoiningType-enum',1,'QChar']]],
+  ['joining_5fnone_10225',['Joining_None',['https://doc.qt.io/qt-5/qchar.html#JoiningType-enum',1,'QChar']]],
+  ['joining_5fright_10226',['Joining_Right',['https://doc.qt.io/qt-5/qchar.html#JoiningType-enum',1,'QChar']]],
+  ['joining_5ftransparent_10227',['Joining_Transparent',['https://doc.qt.io/qt-5/qchar.html#JoiningType-enum',1,'QChar']]],
+  ['jolafonyi_10228',['JolaFonyi',['https://doc.qt.io/qt-5/qlocale.html#Language-enum',1,'QLocale']]],
+  ['jordan_10229',['Jordan',['https://doc.qt.io/qt-5/qlocale.html#Country-enum',1,'QLocale']]],
+  ['julian_10230',['Julian',['https://doc.qt.io/qt-5/qcalendar.html#System-enum',1,'QCalendar']]]
+];

@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['scope_12696',['Scope',['https://doc.qt.io/qt-5/qsettings.html#Scope-enum',1,'QSettings']]],
+  ['screenorientation_12697',['ScreenOrientation',['https://doc.qt.io/qt-5/qt.html#ScreenOrientation-enum',1,'Qt']]],
+  ['script_12698',['Script',['https://doc.qt.io/qt-5/qchar.html#Script-enum',1,'QChar::Script()'],['https://doc.qt.io/qt-5/qlocale.html#Script-enum',1,'QLocale::Script()']]],
+  ['scrollbarpolicy_12699',['ScrollBarPolicy',['https://doc.qt.io/qt-5/qt.html#ScrollBarPolicy-enum',1,'Qt']]],
+  ['scrollphase_12700',['ScrollPhase',['https://doc.qt.io/qt-5/qt.html#ScrollPhase-enum',1,'Qt']]],
+  ['sectionflag_12701',['SectionFlag',['https://doc.qt.io/qt-5/qstring.html#SectionFlag-enum',1,'QString']]],
+  ['selectionflag_12702',['SelectionFlag',['https://doc.qt.io/qt-5/qitemselectionmodel.html#SelectionFlag-enum',1,'QItemSelectionModel']]],
+  ['sharedmemoryerror_12703',['SharedMemoryError',['https://doc.qt.io/qt-5/qsharedmemory.html#SharedMemoryError-enum',1,'QSharedMemory']]],
+  ['shortcutcontext_12704',['ShortcutContext',['https://doc.qt.io/qt-5/qt.html#ShortcutContext-enum',1,'Qt']]],
+  ['singledashwordoptionmode_12705',['SingleDashWordOptionMode',['https://doc.qt.io/qt-5/qcommandlineparser.html#SingleDashWordOptionMode-enum',1,'QCommandLineParser']]],
+  ['sizehint_12706',['SizeHint',['https://doc.qt.io/qt-5/qt.html#SizeHint-enum',1,'Qt']]],
+  ['sizemode_12707',['SizeMode',['https://doc.qt.io/qt-5/qt.html#SizeMode-enum',1,'Qt']]],
+  ['sizes_12708',['Sizes',['https://doc.qt.io/qt-5/qsysinfo.html#Sizes-enum',1,'QSysInfo']]],
+  ['sortflag_12709',['SortFlag',['https://doc.qt.io/qt-5/qdir.html#SortFlag-enum',1,'QDir']]],
+  ['sortorder_12710',['SortOrder',['https://doc.qt.io/qt-5/qt.html#SortOrder-enum',1,'Qt']]],
+  ['specialcharacter_12711',['SpecialCharacter',['https://doc.qt.io/qt-5/qchar.html#SpecialCharacter-enum',1,'QChar']]],
+  ['splitbehavior_12712',['SplitBehavior',['https://doc.qt.io/qt-5/qstring-obsolete.html#SplitBehavior-enum',1,'QString']]],
+  ['splitbehaviorflags_12713',['SplitBehaviorFlags',['https://doc.qt.io/qt-5/qt.html#SplitBehaviorFlags-enum',1,'Qt']]],
+  ['standardlocation_12714',['StandardLocation',['https://doc.qt.io/qt-5/qstandardpaths.html#StandardLocation-enum',1,'QStandardPaths']]],
+  ['state_12715',['State',['https://doc.qt.io/qt-5/qtimeline.html#State-enum',1,'QTimeLine::State()'],['https://doc.qt.io/qt-5/qabstractanimation.html#State-enum',1,'QAbstractAnimation::State()']]],
+  ['status_12716',['Status',['https://doc.qt.io/qt-5/qtextstream.html#Status-enum',1,'QTextStream::Status()'],['https://doc.qt.io/qt-5/qsettings.html#Status-enum',1,'QSettings::Status()'],['https://doc.qt.io/qt-5/qdatastream.html#Status-enum',1,'QDataStream::Status()']]],
+  ['stringformat_12717',['StringFormat',['https://doc.qt.io/qt-5/quuid.html#StringFormat-enum',1,'QUuid']]],
+  ['stringresultcode_12718',['StringResultCode',['https://doc.qt.io/qt-5/qcborstreamreader.html#StringResultCode-enum',1,'QCborStreamReader']]],
+  ['system_12719',['System',['https://doc.qt.io/qt-5/qcalendar.html#System-enum',1,'QCalendar']]],
+  ['systemsemaphoreerror_12720',['SystemSemaphoreError',['https://doc.qt.io/qt-5/qsystemsemaphore.html#SystemSemaphoreError-enum',1,'QSystemSemaphore']]]
+];
